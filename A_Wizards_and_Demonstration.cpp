@@ -14,10 +14,13 @@ using namespace std;
 #define tr(it, a) for(auto it = a.begin(); it != a.end(); it++)
 #define sort_v(a) sort(a.begin(),a.end())
 #define sort(a) sort(a,a+n)
-#define loop(i,a,b) for(int i=a;i<b;i++)
 
 void solve()
 {
+    ll n,x,y,mini=0;
+    cin>>n>>x>>y;
+    int c=n*y%100==0 ? n*y/100 : (n*y/100)+1;
+    cout<<max(mini,(c -x));
 
 }
 

@@ -17,7 +17,28 @@ using namespace std;
 #define loop(i,a,b) for(int i=a;i<b;i++)
 
 void solve()
-{
+{ll int c=0,p;
+cin>>p;
+for(int n=1;n<p;n++){
+    ll int x=1;
+    bool flag=true;
+    for(int i=1;i<p-1;i++){
+        x*=n;
+        x%=p;
+        if(x==1){
+            flag=false;
+            break;
+        }
+    }
+    if(flag){
+        x*=n;
+        x%=p;
+        if(x==1){
+            c++;
+        }
+    }
+}
+cout<<c;
 
 }
 
