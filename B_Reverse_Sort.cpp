@@ -17,7 +17,27 @@ using namespace std;
 #define loop(i,a,b) for(int i=a;i<b;i++)
 
 void solve()
-{
+{ll int n;
+cin>>n;
+string s,t;
+cin>>s;
+t=s;
+if(is_sorted(s.begin(),s.end())){
+    cout<<0<<"\n";
+    return;
+}
+cout<<1<<"\n";
+vector<int>ans;
+sort_v(t);
+for(int i=0;i<n;i++){
+    if(s[i]!=t[i]){
+        ans.push_back(i+1);
+    }
+}
+cout<<ans.size()<<" ";
+for(auto i:ans){
+    cout<<i<<" ";
+}
 
 }
 
@@ -29,7 +49,7 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     ll int t=1;
-    // cin>>t;
+    cin>>t;
     while(t--)
     {
         solve();

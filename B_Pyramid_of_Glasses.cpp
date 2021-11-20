@@ -13,11 +13,13 @@ using namespace std;
 #define clr(x) memset(x, 0, sizeof(x))
 #define tr(it, a) for(auto it = a.begin(); it != a.end(); it++)
 #define sort_v(a) sort(a.begin(),a.end())
-// #define sort(a) sort(a,a+n)
+#define sort(a) sort(a,a+n)
 #define loop(i,a,b) for(int i=a;i<b;i++)
 
 void solve()
-{
+{ll int n,m;
+cin>>n>>m;
+
 
 }
 

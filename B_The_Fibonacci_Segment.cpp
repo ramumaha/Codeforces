@@ -16,8 +16,33 @@ using namespace std;
 // #define sort(a) sort(a,a+n)
 #define loop(i,a,b) for(int i=a;i<b;i++)
 
+
 void solve()
-{
+{ll int n;
+cin>>n;
+vector<ll int>arr(n);
+loop(i,0,n){
+    cin>>arr[i];
+}
+if(n<=2){
+    cout<<n;
+    return;
+}
+ll int ans=0;
+ll int l=2,i=0;
+while(i<n-2){
+    if(arr[i]+arr[i+1]==arr[i+2]){
+        l++;
+        i++;
+    }else{
+        ans=max(ans,l);
+        l=2;
+        i++;
+    }
+}
+cout<<max(ans,l);
+
+
 
 }
 

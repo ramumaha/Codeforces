@@ -18,6 +18,13 @@ using namespace std;
 
 void solve()
 {
+    ll int a,b,c;
+    cin>>a>>b>>c;
+    if((a+c-(2*b))%3){
+        cout<<"1\n";
+    }else{
+        cout<<"0\n";
+    }
 
 }
 
@@ -29,7 +36,7 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     ll int t=1;
-    // cin>>t;
+    cin>>t;
     while(t--)
     {
         solve();

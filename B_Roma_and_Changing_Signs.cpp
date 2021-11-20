@@ -17,8 +17,33 @@ using namespace std;
 #define loop(i,a,b) for(int i=a;i<b;i++)
 
 void solve()
-{
+{ll int n,k;
+cin>>n>>k;
+vector<ll int>arr(n);
+loop(i,0,n){
+    cin>>arr[i];
+}
 
+ll int sum=0;
+ll int i=0;
+while(k>0 && i<n){
+   if(arr[i]<0){
+       arr[i]=-arr[i];
+         k--;
+   }
+   i++; 
+}
+sort_v(arr);
+if(k>0){
+    if(k%2){
+        arr[0]=-arr[0];
+    }
+}
+loop(i,0,n){
+    sum+=arr[i];
+}
+
+cout<<sum;
 }
 
 
