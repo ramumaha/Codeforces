@@ -1,31 +1,15 @@
-#include<bits/stdc++.h>
-using namespace std;
-#define limit 10000
 
-int main(){
-    int n,m,x;
-    cin>>n>>m;
-    vector<int>a(limit,0);
-    vector<int>b(limit,0);
-    vector<int>ans;
-    for(int i=0;i<n;i++){
-        cin>>x;
-        a[x]++;
-    }
-    for(int i=0;i<m;i++){
-        cin>>x;
-        b[x]++;
-    }
-    for(int i=0;i<limit;i++){
-        int mini=min(a[i],b[i]);
-        if(mini!=0){
-            for(int k=0;k<mini;k++){
-                ans.push_back(i);
-            }
+char arr[51][51];
+ll int n,m;
+int sz;
+void dfs(int i,int j){
+     if(arr[i][j]=='.' && i>0 && j>0 && i<n-1 && j<0 &&!visited[i][j]){
+         visited[i][j]=1;
+         sz++;
+     }else{
+         return;
+     }
+     dfs(i,j+1);
+     dfs(i,j-1);
 
-        }
-    }
-    for(int i=0;i<ans.size();i++){
-        cout<<ans[i]<<" ";
-    }
 }

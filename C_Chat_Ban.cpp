@@ -16,18 +16,27 @@ using namespace std;
 // #define sort(a) sort(a,a+n)
 #define loop(i,a,b) for(int i=a;i<b;i++)
 
-int n ,k;
-int arr[1<<17];
-char a[1<<17];
-int ans,l,r;
+bool good(ll int mid,ll int x){
+    return 2*(mid*(mid+1)/2)-mid<=x;
 
+}
 
 void solve()
-{l=1;
-for(int r=1;r<=n;r++){
-    while(l<r && arr[r]-arr[l-1]>k)l++;
-    if(arr[r]-arr[l-1]<=k)ans=max(ans,r-l+1);
+{
+ll int k,x;
+cin>>k>>x;
+ll int l=1,r=2*(k*(k+1)/2)-k;
+
+while(l<=r){
+    ll int mid=(r+l)>>1;
+    if(!good(mid,x)){
+        r=mid-1;
+    }else{
+        l=mid+1;
+    }
 }
+cout<<r<<"\n";
+
 }
 
 
@@ -37,22 +46,12 @@ int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-   cin>>n>>k;
-   cin>>(a+1);
-   for(int i=1;i<=n;i++){
-       if(a[i]=='a')arr[i]=1;
-       else arr[i]=0;
-       arr[i]+=arr[i-1];
-
-   }
-   solve();
-   for(int i=1;i<=n;i++){
-       if(a[i]=='b')arr[i]=1;
-       else arr[i]=0;
-       arr[i]+=arr[i-1];
-   }
-   solve();
-   cout<<ans<<"\n";
+    ll int t=1;
+    cin>>t;
+    while(t--)
+    {
+        solve();
+    }
        
     
     

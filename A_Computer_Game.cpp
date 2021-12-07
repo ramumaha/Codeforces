@@ -13,22 +13,32 @@ using namespace std;
 #define clr(x) memset(x, 0, sizeof(x))
 #define tr(it, a) for(auto it = a.begin(); it != a.end(); it++)
 #define sort_v(a) sort(a.begin(),a.end())
-// #define sort(a) sort(a,a+n)
 #define loop(i,a,b) for(int i=a;i<b;i++)
-
-int n ,k;
-int arr[1<<17];
-char a[1<<17];
-int ans,l,r;
-
+vector<string>arr(101);
+int visited[3][101];
 
 void solve()
-{l=1;
-for(int r=1;r<=n;r++){
-    while(l<r && arr[r]-arr[l-1]>k)l++;
-    if(arr[r]-arr[l-1]<=k)ans=max(ans,r-l+1);
+{ll int n;
+cin>>n;
+string a ,b;
+cin>>a>>b;
+bool ans=false;
+for(int i=0;i<n;i++){
+    ans|=(a[i]=='1'&&b[i]=='1');
+    
 }
+if(ans){
+    cout<<"NO\n";
+}else{
+    cout<<"YES\n";
 }
+
+}
+
+
+
+
+
 
 
 
@@ -37,22 +47,12 @@ int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-   cin>>n>>k;
-   cin>>(a+1);
-   for(int i=1;i<=n;i++){
-       if(a[i]=='a')arr[i]=1;
-       else arr[i]=0;
-       arr[i]+=arr[i-1];
-
-   }
-   solve();
-   for(int i=1;i<=n;i++){
-       if(a[i]=='b')arr[i]=1;
-       else arr[i]=0;
-       arr[i]+=arr[i-1];
-   }
-   solve();
-   cout<<ans<<"\n";
+    ll int t=1;
+    cin>>t;
+    while(t--)
+    {
+        solve();
+    }
        
     
     

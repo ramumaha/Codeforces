@@ -16,18 +16,40 @@ using namespace std;
 // #define sort(a) sort(a,a+n)
 #define loop(i,a,b) for(int i=a;i<b;i++)
 
-int n ,k;
-int arr[1<<17];
-char a[1<<17];
-int ans,l,r;
+ll int sum_digit(ll int x){
+    ll int ans=0;
+    while(x>0){
+        ans+=x%10;
+        x/=10;
+    }
+    return ans;
 
+}
+
+ll int power(ll int base,ll int pwr){
+    if(pwr==0){
+        return 1;
+    }
+    return base*power(base,pwr-1);
+}
 
 void solve()
-{l=1;
-for(int r=1;r<=n;r++){
-    while(l<r && arr[r]-arr[l-1]>k)l++;
-    if(arr[r]-arr[l-1]<=k)ans=max(ans,r-l+1);
+{ll int a,b,c;
+cin>>a>>b>>c;
+vector<int>ans;
+for(int i=1;i<=81;i++){
+    ll int x=((b)*(power(i,a)))+c;
+    // cout<<i<<" "<<sum_digit(x)<<"\n";
+    if(i==sum_digit(x)&& x<1000000000){
+        ans.push_back(x);
+
+    }
 }
+cout<<ans.size()<<"\n";
+for(auto i:ans){
+    cout<<i<<" ";
+}
+
 }
 
 
@@ -37,22 +59,12 @@ int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-   cin>>n>>k;
-   cin>>(a+1);
-   for(int i=1;i<=n;i++){
-       if(a[i]=='a')arr[i]=1;
-       else arr[i]=0;
-       arr[i]+=arr[i-1];
-
-   }
-   solve();
-   for(int i=1;i<=n;i++){
-       if(a[i]=='b')arr[i]=1;
-       else arr[i]=0;
-       arr[i]+=arr[i-1];
-   }
-   solve();
-   cout<<ans<<"\n";
+    ll int t=1;
+    // cin>>t;
+    while(t--)
+    {
+        solve();
+    }
        
     
     
