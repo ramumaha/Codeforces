@@ -13,13 +13,38 @@ using namespace std;
 #define clr(x) memset(x, 0, sizeof(x))
 #define tr(it, a) for(auto it = a.begin(); it != a.end(); it++)
 #define sort_v(a) sort(a.begin(),a.end())
+// #define sort(a) sort(a,a+n)
 #define loop(i,a,b) for(int i=a;i<b;i++)
+vector<ll int>arr(100005);
+
+ll int n;
+vector<int>changes;
 
 
 
+void solve()
+{ll int m,x,v,y,q,t;
+cin>>n>>m;
+ll int s=0;
+loop(i,1,n+1){
+    cin>>arr[i];
+   
+}
+while(m--){
+    cin>>t;
+    if(t==1){
+        cin>>v>>x;
+        arr[v]=x-s;
+        
+    }else if(t==2){
+        cin>>y;
+        s+=y;
 
-
-void solve(){
+    }else{
+        cin>>q;
+        cout<<arr[q]+s<<"\n";
+    }
+}
 
 }
 

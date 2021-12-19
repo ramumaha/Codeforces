@@ -13,30 +13,31 @@ using namespace std;
 #define clr(x) memset(x, 0, sizeof(x))
 #define tr(it, a) for(auto it = a.begin(); it != a.end(); it++)
 #define sort_v(a) sort(a.begin(),a.end())
+// #define sort(a) sort(a,a+n)
 #define loop(i,a,b) for(int i=a;i<b;i++)
 
 
 
-
-
-void solve(){
-
+vector<ll> v;
+ll a, b;
+ 
+void go(ll x) {
+	if (x > 1000000000000000) return;
+	if (x >= a) v.pb(x);
+	go(x * 10 + 4);
+	go(x * 10 + 7);
 }
-
-
-
-
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    ll int t=1;
-    // cin>>t;
-    while(t--)
-    {
-        solve();
-    }
-       
-    
-    
+ 
+int main() {
+	cin >> a >> b;
+	go(0);
+	sort(v.begin(),v.end());
+	ll res = 0;
+	for (ll x : v) {
+		res += (x) * (min(x, b) - a + 1);
+		a = x + 1;
+		if (a > b) break;
+	}
+	cout << res << endl;
+	return 0;
 }

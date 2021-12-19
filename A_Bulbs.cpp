@@ -20,6 +20,23 @@ using namespace std;
 
 
 void solve(){
+ll int n,m,x,y;
+cin>>n>>m;
+vector<ll int>arr(m+1,0);
+for(ll int i=0;i<n;i++){
+    cin>>x;
+    for(ll int j=0;j<x;j++){
+        cin>>y;
+    arr[y]++;}
+}
+for(ll int i=1;i<=m;i++){
+    if(arr[i]==0){
+        cout<<"NO\n";
+        return;
+    }
+}
+cout<<"YES\n";
+
 
 }
 

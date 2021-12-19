@@ -20,7 +20,36 @@ using namespace std;
 
 
 void solve(){
-
+    ll int n;
+    cin>>n;
+    string ans;
+    vector<ll int>a(n);
+    vector<ll int>g(n);
+    ll int difference=0;
+    loop(i,0,n){
+        cin>>a[i]>>g[i];
+    }
+    ll int x=0,y=0;
+    for(ll int i=0;i<n;i++){
+        if(difference + a[x]<=500){
+            ans+='A';
+            difference+=a[x];
+            x++;
+            y++;
+        }else{
+            ans+='G';
+            difference-=g[y];
+            y++;
+            x++;
+        }
+    }
+    // cout<<difference;
+    if(difference>500){
+        cout<<-1;
+        return;
+    }else{
+        cout<<ans;
+    }
 }
 
 

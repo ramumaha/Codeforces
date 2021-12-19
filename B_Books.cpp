@@ -20,6 +20,24 @@ using namespace std;
 
 
 void solve(){
+    ll int n,t;
+    cin>>n>>t;
+    vector<ll int>min(n);
+    loop(i,0,n){
+        cin>>min[i];
+    }
+    ll int l=0,ans=0,x=0;
+    for(ll int r=0;r<n;r++){
+        x+=min[r];
+        while(x>t){
+            x-=min[l];
+            l++;
+        }
+        ans=max(ans,r-l+1);
+
+
+    }
+    cout<<ans;
 
 }
 

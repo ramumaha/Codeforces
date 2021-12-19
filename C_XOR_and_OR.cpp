@@ -20,6 +20,31 @@ using namespace std;
 
 
 void solve(){
+    string str1,str2;
+    cin>>str1>>str2;
+    if(str1.size()!=str2.size()){
+        cout<<"NO\n";
+        return;
+    }
+    if(str1==str2){
+        cout<<"YES\n";
+        return;
+    }
+    ll int x=0,y=0;
+    for(ll int i=0;i<str1.size();i++){
+        if(str1[i]=='0'){
+            x++;
+        }
+        if(str2[i]=='0'){
+        y++;
+    }
+    }
+    if(x==str1.size() || y==str2.size()){
+        cout<<"NO\n";
+        return;
+    }
+    cout<<"YES\n";
+
 
 }
 
